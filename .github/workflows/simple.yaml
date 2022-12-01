@@ -1,0 +1,15 @@
+name: Simple POC workflow
+
+on: 
+  push:
+    branches:
+      - "main"
+
+jobs:
+  simple-job:
+    name: Simple Job 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Simple Step 
+        run: echo "Hello Github Action"
