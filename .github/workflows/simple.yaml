@@ -5,11 +5,12 @@ on:
     branches:
       - "main"
 
+env:
+  CICD_PLATFORM: ${{ secrets.CICD_PLATFORM }}
+
 jobs:
   simple-job:
-    env:
-      ENABLED: ${{ secrets.CICD_PLATFORM == 'github' }}
-    if: ${{ env.ENABLED }}
+    if: ${{ env.CICD_PLATFORM == 'github' }}
     name: Simple Job 
     runs-on: ubuntu-latest
 
