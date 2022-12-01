@@ -7,7 +7,9 @@ on:
 
 jobs:
   simple-job:
-    if: ${{ secrets.CICD_PLATFORM }} == github'
+    env:
+      CICD_PLATFORM: ${{ secrets.CICD_PLATFORM }}
+    if: ${{ env.CICD_PLATFORM == 'github' }}
     name: Simple Job 
     runs-on: ubuntu-latest
 
