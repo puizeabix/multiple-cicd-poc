@@ -7,6 +7,7 @@ on:
 
 jobs:
   simple-job:
+    if: ${{ secrets.CICD_PLATFORM }} == github'
     name: Simple Job 
     runs-on: ubuntu-latest
 
