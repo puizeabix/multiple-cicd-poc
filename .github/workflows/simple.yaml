@@ -10,6 +10,8 @@ env:
 
 jobs:
   simple-job:
+    env:
+      CICD_PLATFORM: ${{ secrets.CICD_PLATFORM }}
     if: env.CICD_PLATFORM == 'github'
     name: Simple Job 
     runs-on: ubuntu-latest
